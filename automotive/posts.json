@@ -27,15 +27,16 @@
     "tags": [
       "CAN",
       "CAN-FD"
-    ],
-    {
-    "file": "克隆CAN报文.md",
-    "title": "CAN Clone Message",
-    "date": "2026-11-24",
-    "summary": "Reading a vehicle CAN topology diagram and tracing a signal from node to gateway.",
-    "tags": [
-      "CAN",
-      "CAN-FD"
+    ]
+  },
+  {
+      "file": "克隆CAN报文.md",
+      "title": "CAN Clone Message",
+      "date": "2026-11-24",
+      "summary": "Reading a vehicle CAN topology diagram and tracing a signal from node to gateway.",
+      "tags": [
+        "CAN",
+        "CAN-FD"
     ]
   }
 ]
