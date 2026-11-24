@@ -30,13 +30,13 @@
     ]
   },
   {
-      "file": "克隆CAN报文.md",
-      "title": "CAN Clone Message",
-      "date": "2026-11-24",
-      "summary": "Reading a vehicle CAN topology diagram and tracing a signal from node to gateway.",
-      "tags": [
-        "CAN",
-        "CAN-FD"
+    "file": "克隆CAN报文.md",
+    "title": "Clone CAN Message",
+    "date": "2026-11-24",
+    "summary": "介绍如何使用 ZCAN PRO 工具和 CAN 卡克隆 CAN 总线的报文显示。",
+    "tags": [
+      "CAN",
+      "Clone"
     ]
   }
 ]
