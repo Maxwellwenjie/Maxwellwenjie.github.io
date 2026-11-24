@@ -71,5 +71,26 @@
       "CAN",
       "CAN-FD"
     ]
+  },
+  {
+    "file": "Power Block.md",
+    "title": "Power Block",
+    "date": "",
+    "summary": "",
+    "tags": []
+  },
+  {
+    "file": "01-QNX_调试常用指令.md",
+    "title": "01-QNX_调试常用指令",
+    "date": "",
+    "summary": "cat /mnt/etc/issue",
+    "tags": []
+  },
+  {
+    "file": "01-8295模组点位.md",
+    "title": "01-8295模组点位",
+    "date": "",
+    "summary": "在芯片数据手册上看4颗普通的PMIC芯片分别命名为PMA, PMC, PME, PMG",
+    "tags": []
   }
 ]
