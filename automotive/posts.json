@@ -1,0 +1,32 @@
+[
+  {
+    "file": "smart-cockpit-failure-analysis.md",
+    "title": "Smart Cockpit Failure Analysis",
+    "date": "2026-11-24",
+    "summary": "Root-cause methodology for intermittent display and audio faults on LEAP 3.5 platforms.",
+    "tags": [
+      "Smart Cockpit",
+      "Diagnostics"
+    ]
+  },
+  {
+    "file": "tbox-troubleshooting.md",
+    "title": "T-Box Troubleshooting Notes",
+    "date": "2026-11-18",
+    "summary": "Country code mismatch, Wi-Fi provisioning and network registration issues in the field.",
+    "tags": [
+      "T-Box",
+      "OTA"
+    ]
+  },
+  {
+    "file": "can-topology.md",
+    "title": "CAN Topology Walkthrough",
+    "date": "2026-10-10",
+    "summary": "Reading a vehicle CAN topology diagram and tracing a signal from node to gateway.",
+    "tags": [
+      "CAN",
+      "CAN-FD"
+    ]
+  }
+]

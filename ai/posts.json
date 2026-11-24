@@ -1,0 +1,22 @@
+[
+  {
+    "file": "copilot-workflow.md",
+    "title": "Copilot Workflow for Hardware Engineers",
+    "date": "2026-11-20",
+    "summary": "Where AI genuinely saves time on diagnostics, scripting and documentation — and where it does not.",
+    "tags": [
+      "Copilot",
+      "Workflow"
+    ]
+  },
+  {
+    "file": "ai-log-analysis.md",
+    "title": "Using LLMs to Triage Vehicle Logs",
+    "date": "2026-11-12",
+    "summary": "A practical prompt pattern for turning 200k-line CAN logs into a shortlist of suspects.",
+    "tags": [
+      "LLM",
+      "Diagnostics"
+    ]
+  }
+]

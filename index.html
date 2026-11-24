@@ -5,168 +5,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wenjie Liu</title>
+<title>Wenjie Liu — Automotive Electronics Engineer</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:#ffffff;
-    color:#333;
-    line-height:1.7;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:50px 20px;
-}
-
-.hero{
-    background:#f8fafc;
-    padding:80px 20px;
-}
-
-.hero-content{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:60px;
-    flex-wrap:wrap;
-}
-
-.profile-photo{
-    width:260px;
-    height:260px;
-    border-radius:50%;
-    object-fit:cover;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-.hero-text{
-    max-width:550px;
-}
-
-.hero-text h1{
-    font-size:52px;
-    margin-bottom:10px;
-    color:#111827;
-}
-
-.hero-text h2{
-    font-size:24px;
-    color:#2563eb;
-    font-weight:500;
-    margin-bottom:15px;
-}
-
-.hero-text p{
-    font-size:18px;
-    color:#555;
-    margin-bottom:25px;
-}
-
-.button{
-    display:inline-block;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:8px;
-    margin-right:10px;
-    margin-top:10px;
-}
-
-.button:hover{
-    background:#1d4ed8;
-}
-
-.section{
-    padding:70px 0;
-}
-
-.section h3{
-    font-size:32px;
-    margin-bottom:30px;
-    color:#111827;
-    text-align:center;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.job-title{
-    color:#2563eb;
-    font-weight:600;
-    margin-bottom:10px;
-}
-
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    justify-content:center;
-}
-
-.skill{
-    background:#eff6ff;
-    color:#2563eb;
-    padding:10px 16px;
-    border-radius:20px;
-}
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-}
-
-.project{
-    background:#fff;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.footer{
-    text-align:center;
-    padding:50px;
-    background:#f8fafc;
-}
-
-.footer a{
-    color:#2563eb;
-    text-decoration:none;
-}
-
-@media (max-width:768px){
-
-.hero-text h1{
-    font-size:38px;
-}
-
-.profile-photo{
-    width:180px;
-    height:180px;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
+
+<nav class="navbar">
+<div class="nav-inner">
+<a class="nav-brand" href="/">Wenjie <span>Liu</span></a>
+<div class="nav-links">
+<a href="/" class="active">Home</a>
+<a href="/#resume">Resume</a>
+<a href="/automotive/">Automotive</a>
+<a href="/ai/">AI</a>
+<a href="/travel/">Travel</a>
+<a href="/photography/">Photography</a>
+<a href="/notes/">Notes</a>
+</div>
+</div>
+</nav>
 
 <section class="hero">
 
@@ -192,13 +51,15 @@ Smart Cockpit • ADAS • AI Systems • Embedded Engineering
 
 <a class="button"
 href="Jackile-resume-EN.pdf"
-target="_blank">
+target="_blank"
+rel="noopener">
 Download Resume
 </a>
 
-<a class="button"
+<a class="button secondary"
 href="https://github.com/Maxwellwenjie"
-target="_blank">
+target="_blank"
+rel="noopener">
 GitHub
 </a>
 
@@ -232,7 +93,43 @@ productivity improvement through AI technologies.
 
 <section class="section">
 
-<h3>Professional Experience</h3>
+<h3>Explore</h3>
+
+<div class="projects">
+
+<a class="project" href="/automotive/" style="text-decoration:none;display:block;">
+<h4>🚗 Automotive</h4>
+<p>Smart Cockpit, ADAS, vehicle diagnostics and failure analysis.</p>
+</a>
+
+<a class="project" href="/ai/" style="text-decoration:none;display:block;">
+<h4>🤖 AI</h4>
+<p>Copilot, LLM workflows and engineering productivity.</p>
+</a>
+
+<a class="project" href="/travel/" style="text-decoration:none;display:block;">
+<h4>🌍 Travel</h4>
+<p>France, Spain and the rest of Europe.</p>
+</a>
+
+<a class="project" href="/photography/" style="text-decoration:none;display:block;">
+<h4>📸 Photography</h4>
+<p>Selected photo collections.</p>
+</a>
+
+<a class="project" href="/notes/" style="text-decoration:none;display:block;">
+<h4>✍ Notes</h4>
+<p>Short thoughts about engineering and life.</p>
+</a>
+
+</div>
+
+</section>
+
+<!-- Resume -->
+<section class="section" id="resume">
+
+<h3>Resume</h3>
 
 <div class="card">
 
@@ -240,7 +137,9 @@ productivity improvement through AI technologies.
 Leapmotor Technology
 </div>
 
+<div class="job-meta">
 After-Sales Analysis FAE
+</div>
 
 <ul>
 
@@ -264,7 +163,9 @@ After-Sales Analysis FAE
 NetEase Robotics
 </div>
 
+<div class="job-meta">
 Vehicle Testing Engineer
+</div>
 
 <ul>
 
@@ -277,6 +178,20 @@ Vehicle Testing Engineer
 <li>Vehicle integration and validation</li>
 
 </ul>
+
+</div>
+
+<div class="card">
+
+<h4>Full Resume</h4>
+
+<p style="margin-bottom:16px;color:#555;">
+A complete CV with education, certifications and detailed project history.
+</p>
+
+<a class="button" href="Jackile-resume-EN.pdf" target="_blank" rel="noopener">
+Download PDF Resume
+</a>
 
 </div>
 

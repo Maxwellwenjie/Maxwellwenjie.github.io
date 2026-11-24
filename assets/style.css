@@ -1,0 +1,656 @@
+/* ===========================================================
+   Wenjie Liu — shared stylesheet
+   Used by every page: /index.html and each category folder.
+   =========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#ffffff;
+    color:#333;
+    line-height:1.7;
+    padding-top:64px;          /* clears the fixed navbar */
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:64px;
+    z-index:100;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid #e5e7eb;
+}
+
+.nav-inner{
+    max-width:1100px;
+    height:100%;
+    margin:auto;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-brand{
+    font-size:17px;
+    font-weight:700;
+    color:#111827;
+    text-decoration:none;
+    letter-spacing:-.2px;
+    white-space:nowrap;
+}
+
+.nav-brand span{
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.nav-links::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-links a{
+    color:#4b5563;
+    text-decoration:none;
+    font-size:15px;
+    padding:7px 13px;
+    border-radius:7px;
+    white-space:nowrap;
+    transition:background .15s,color .15s;
+}
+
+.nav-links a:hover{
+    background:#f3f4f6;
+    color:#111827;
+}
+
+.nav-links a.active{
+    color:#2563eb;
+    background:#eff6ff;
+    font-weight:600;
+}
+
+/* ---------- Layout ---------- */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.container.narrow{
+    max-width:760px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+    background:#f8fafc;
+    padding:80px 20px;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.profile-photo{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero-text{
+    max-width:550px;
+}
+
+.hero-text h1{
+    font-size:52px;
+    margin-bottom:10px;
+    color:#111827;
+    letter-spacing:-1px;
+}
+
+.hero-text h2{
+    font-size:24px;
+    color:#2563eb;
+    font-weight:500;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:12px;
+}
+
+.hero-text p:last-of-type{
+    margin-bottom:25px;
+}
+
+.button{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    margin-right:10px;
+    margin-top:10px;
+    font-size:15px;
+    transition:background .15s;
+}
+
+.button:hover{
+    background:#1d4ed8;
+}
+
+.button.secondary{
+    background:#fff;
+    color:#2563eb;
+    border:1px solid #bfdbfe;
+}
+
+.button.secondary:hover{
+    background:#eff6ff;
+}
+
+/* ---------- Sections ---------- */
+
+.section{
+    padding:70px 0;
+}
+
+.section:first-child{
+    padding-top:20px;
+}
+
+.section h3{
+    font-size:32px;
+    margin-bottom:30px;
+    color:#111827;
+    text-align:center;
+    letter-spacing:-.5px;
+}
+
+.page-header{
+    padding:60px 20px 10px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:42px;
+    color:#111827;
+    letter-spacing:-1px;
+    margin-bottom:14px;
+}
+
+.page-header p{
+    font-size:18px;
+    color:#6b7280;
+    max-width:620px;
+    margin:0 auto;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.job-title{
+    color:#2563eb;
+    font-weight:600;
+    margin-bottom:6px;
+    font-size:19px;
+}
+
+.job-meta{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:14px;
+}
+
+.card ul{
+    padding-left:22px;
+}
+
+.card ul li{
+    margin-bottom:6px;
+}
+
+.card h4{
+    font-size:19px;
+    color:#111827;
+    margin-bottom:12px;
+}
+
+/* ---------- Skills ---------- */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.skill{
+    background:#eff6ff;
+    color:#2563eb;
+    padding:10px 16px;
+    border-radius:20px;
+    font-size:15px;
+}
+
+/* ---------- Project grid ---------- */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.project h4{
+    font-size:19px;
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.project p{
+    color:#555;
+    font-size:15px;
+}
+
+/* ---------- Article / post list ---------- */
+
+.post-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:22px;
+    margin-top:20px;
+}
+
+.post-card{
+    display:block;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    padding:26px;
+    border-radius:12px;
+    text-decoration:none;
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+
+.post-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.09);
+    border-color:#bfdbfe;
+}
+
+.post-card .post-date{
+    font-size:13px;
+    color:#9ca3af;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.post-card h4{
+    font-size:20px;
+    color:#111827;
+    margin-bottom:10px;
+    line-height:1.35;
+}
+
+.post-card p{
+    color:#555;
+    font-size:15px;
+}
+
+.post-card .post-tags{
+    margin-top:14px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.post-card .tag{
+    font-size:12px;
+    color:#2563eb;
+    background:#eff6ff;
+    padding:4px 10px;
+    border-radius:12px;
+}
+
+/* ---------- Single article ---------- */
+
+.article{
+    max-width:760px;
+    margin:auto;
+    padding:50px 20px 80px;
+}
+
+.article .back-link{
+    display:inline-block;
+    color:#2563eb;
+    text-decoration:none;
+    font-size:15px;
+    margin-bottom:26px;
+}
+
+.article .back-link:hover{
+    text-decoration:underline;
+}
+
+.article h1{
+    font-size:38px;
+    color:#111827;
+    line-height:1.25;
+    letter-spacing:-.8px;
+    margin-bottom:12px;
+}
+
+.article .article-meta{
+    color:#9ca3af;
+    font-size:14px;
+    margin-bottom:34px;
+    padding-bottom:22px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.article h2{
+    font-size:26px;
+    color:#111827;
+    margin:38px 0 14px;
+}
+
+.article h3{
+    font-size:21px;
+    color:#111827;
+    margin:28px 0 12px;
+}
+
+.article p{
+    margin-bottom:18px;
+    font-size:17px;
+    color:#374151;
+}
+
+.article ul,
+.article ol{
+    margin:0 0 18px 22px;
+}
+
+.article li{
+    margin-bottom:8px;
+    color:#374151;
+}
+
+.article img{
+    max-width:100%;
+    height:auto;
+    border-radius:10px;
+    margin:22px 0;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+
+.article code{
+    background:#f3f4f6;
+    padding:2px 6px;
+    border-radius:4px;
+    font-size:.9em;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.article pre{
+    background:#1f2937;
+    color:#e5e7eb;
+    padding:18px 20px;
+    border-radius:10px;
+    overflow-x:auto;
+    margin-bottom:22px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.article pre code{
+    background:none;
+    padding:0;
+    color:inherit;
+}
+
+.article blockquote{
+    border-left:4px solid #bfdbfe;
+    background:#f8fafc;
+    padding:14px 20px;
+    margin:0 0 20px;
+    color:#4b5563;
+    border-radius:0 8px 8px 0;
+}
+
+.article blockquote p{
+    margin-bottom:0;
+    color:inherit;
+}
+
+/* --- elements produced by the Markdown renderer --- */
+
+.article a{
+    color:#2563eb;
+    text-decoration:none;
+    border-bottom:1px solid #bfdbfe;
+}
+
+.article a:hover{
+    border-bottom-color:#2563eb;
+}
+
+.article hr{
+    border:none;
+    border-top:1px solid #e5e7eb;
+    margin:40px 0;
+}
+
+.article h4{
+    font-size:18px;
+    color:#111827;
+    margin:24px 0 10px;
+}
+
+.article table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 0 22px;
+    font-size:15px;
+}
+
+.article th,
+.article td{
+    border:1px solid #e5e7eb;
+    padding:10px 14px;
+    text-align:left;
+    color:#374151;
+}
+
+.article th{
+    background:#f8fafc;
+    color:#111827;
+    font-weight:600;
+}
+
+.article tr:nth-child(even) td{
+    background:#fcfcfd;
+}
+
+.article dl{
+    margin-bottom:20px;
+}
+
+.article dt{
+    font-weight:600;
+    color:#111827;
+    margin-top:14px;
+}
+
+.article dd{
+    margin-left:20px;
+    color:#374151;
+}
+
+.article strong{
+    color:#111827;
+}
+
+/* ---------- Empty state ---------- */
+
+.empty-state{
+    text-align:center;
+    padding:60px 24px;
+    border:2px dashed #e5e7eb;
+    border-radius:14px;
+    color:#9ca3af;
+    margin-top:20px;
+}
+
+.empty-state p{
+    font-size:16px;
+}
+
+/* ---------- Footer ---------- */
+
+.footer{
+    text-align:center;
+    padding:50px 20px;
+    background:#f8fafc;
+    border-top:1px solid #e5e7eb;
+}
+
+.footer h3{
+    font-size:24px;
+    color:#111827;
+    margin-bottom:18px;
+}
+
+.footer p{
+    margin-bottom:8px;
+    color:#555;
+}
+
+.footer a{
+    color:#2563eb;
+    text-decoration:none;
+}
+
+.footer a:hover{
+    text-decoration:underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:768px){
+
+    body{
+        padding-top:58px;
+    }
+
+    .navbar{
+        height:58px;
+    }
+
+    .nav-inner{
+        gap:16px;
+        padding:0 14px;
+    }
+
+    .nav-brand{
+        font-size:15px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+        padding:6px 10px;
+    }
+
+    .hero{
+        padding:50px 20px;
+    }
+
+    .hero-text h1{
+        font-size:34px;
+    }
+
+    .hero-text h2{
+        font-size:19px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .profile-photo{
+        width:170px;
+        height:170px;
+    }
+
+    .section{
+        padding:45px 0;
+    }
+
+    .section h3{
+        font-size:26px;
+    }
+
+    .page-header h1{
+        font-size:32px;
+    }
+
+    .page-header p{
+        font-size:16px;
+    }
+
+    .article h1{
+        font-size:28px;
+    }
+
+    .post-list{
+        grid-template-columns:1fr;
+    }
+
+}
