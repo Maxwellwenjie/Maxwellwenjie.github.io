@@ -21,17 +21,24 @@
 (function () {
   'use strict';
 
+  /* ---------- config ---------- */
+
+  // Same repo as post.js. posts.json IS served by GitHub Pages, so we
+  // try the local copy first (fast, same-origin) and only fall back to
+  // the CDN if that request fails.
+  var REPO_OWNER = 'Maxwellwenjie';
+  var REPO_NAME = 'maxwellwenjie.github.io';
+  var REPO_BRANCH = 'master';
+  var CDN = 'https://cdn.jsdelivr.net/gh/' + REPO_OWNER + '/' + REPO_NAME + '@' + REPO_BRANCH + '/';
+
   var mount = document.getElementById('post-list');
   if (!mount) return;
 
   // Category folder = current path, e.g. /automotive/
   var base = window.location.pathname.replace(/[^/]*$/, '');
+  var relPath = base.replace(/^\/+/, '') + 'posts.json';
 
-  fetch(base + 'posts.json', { cache: 'no-cache' })
-    .then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
-    })
+  fetchJson([base + 'posts.json', CDN + encodeURI(relPath)])
     .then(function (posts) {
       if (!Array.isArray(posts) || posts.length === 0) {
         mount.innerHTML =
@@ -75,6 +82,23 @@
         escapeHtml(err.message) +
         ').</p></div>';
     });
+
+  /* ---------- helpers ---------- */
+
+  // Try each URL in order; resolve with the parsed JSON of the first
+  // one that answers 200 with valid JSON.
+  function fetchJson(urls) {
+    return urls.reduce(function (chain, url) {
+      return chain.catch(function () {
+        return fetch(url, { cache: 'no-cache' }).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        });
+      });
+    }, Promise.reject(new Error('no source'))).catch(function () {
+      throw new Error('neither the local copy nor the CDN responded');
+    });
+  }
 
   function escapeHtml(s) {
     return String(s)
