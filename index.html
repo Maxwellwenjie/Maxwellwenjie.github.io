@@ -1,238 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Wenjie Liu</title>
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-background:#0d1117;
-color:#ffffff;
-font-family:Segoe UI,Arial;
-margin:0;
-padding:0;
-}
-
-.hero{
-
-padding:120px 40px;
-text-align:center;
-
-background:
-linear-gradient(
-rgba(0,0,0,.6),
-rgba(0,0,0,.8)
-);
-
-}
-
-.hero h1{
-
-font-size:64px;
-margin-bottom:10px;
-
-}
-
-.hero h2{
-
-font-weight:300;
-color:#58a6ff;
-
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#ffffff;
+    color:#333;
+    line-height:1.7;
 }
 
 .container{
-
-max-width:1100px;
-margin:auto;
-padding:50px 20px;
-
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
 }
 
-.card{
-
-background:#161b22;
-
-padding:30px;
-
-border-radius:15px;
-
-margin-bottom:30px;
-
+.hero{
+    background:#f8fafc;
+    padding:80px 20px;
 }
 
-h3{
-
-color:#58a6ff;
-
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
 }
 
-a{
+.profile-photo{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
 
-color:#58a6ff;
+.hero-text{
+    max-width:550px;
+}
 
-text-decoration:none;
+.hero-text h1{
+    font-size:52px;
+    margin-bottom:10px;
+    color:#111827;
+}
 
+.hero-text h2{
+    font-size:24px;
+    color:#2563eb;
+    font-weight:500;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:25px;
 }
 
 .button{
-
-display:inline-block;
-
-padding:12px 30px;
-
-margin:10px;
-
-border:1px solid #58a6ff;
-
-border-radius:50px;
-
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    margin-right:10px;
+    margin-top:10px;
 }
 
 .button:hover{
-
-background:#58a6ff;
-color:black;
-
+    background:#1d4ed8;
 }
 
-ul li{
+.section{
+    padding:70px 0;
+}
 
-margin-bottom:8px;
+.section h3{
+    font-size:32px;
+    margin-bottom:30px;
+    color:#111827;
+    text-align:center;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.job-title{
+    color:#2563eb;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.skill{
+    background:#eff6ff;
+    color:#2563eb;
+    padding:10px 16px;
+    border-radius:20px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.project{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.footer{
+    text-align:center;
+    padding:50px;
+    background:#f8fafc;
+}
+
+.footer a{
+    color:#2563eb;
+    text-decoration:none;
+}
+
+@media (max-width:768px){
+
+.hero-text h1{
+    font-size:38px;
+}
+
+.profile-photo{
+    width:180px;
+    height:180px;
+}
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <section class="hero">
 
+<div class="hero-content">
+
+<img src="images/profile.jpg"
+class="profile-photo"
+alt="Wenjie Liu">
+
+<div class="hero-text">
+
 <h1>Wenjie Liu</h1>
 
-<h2>
-Automotive Electronics Engineer
-</h2>
+<h2>Automotive Electronics Engineer</h2>
 
 <p>
-Smart Cockpit • ADAS • AI Systems
+Smart Cockpit • ADAS • AI Systems • Embedded Engineering
 </p>
 
-<a class="button" href="Jackile-resume-EN.pdf">
-Resume
+<p>
+📍 Based in France
+</p>
+
+<a class="button"
+href="Jackile-resume-EN.pdf"
+target="_blank">
+Download Resume
 </a>
 
-<a class="button" href="https://github.com/Maxwellwenjie">
+<a class="button"
+href="https://github.com/Maxwellwenjie"
+target="_blank">
 GitHub
 </a>
+
+</div>
+
+</div>
 
 </section>
 
 <div class="container">
 
-<div class="card">
+<section class="section">
 
 <h3>About Me</h3>
 
+<div class="card">
+
 <p>
 
-Automotive electronics engineer with experience
-in Smart Cockpit, T-Box systems,
-ADAS and AI-enabled machinery.
+I am an automotive electronics engineer with experience in Smart Cockpit,
+T-Box systems, DSP amplifiers, ADAS platforms and embedded hardware development.
 
-Currently contributing to LEAP 3.5
-vehicle architecture development.
+Currently focused on vehicle diagnostics, failure analysis and engineering
+productivity improvement through AI technologies.
 
 </p>
 
 </div>
 
-<div class="card">
+</section>
+
+<section class="section">
 
 <h3>Professional Experience</h3>
 
-<h4>Leapmotor Technology</h4>
+<div class="card">
 
-<p>
+<div class="job-title">
+Leapmotor Technology
+</div>
+
 After-Sales Analysis FAE
-</p>
 
 <ul>
 
-<li>Smart Cockpit systems</li>
+<li>Smart Cockpit diagnostics</li>
 
-<li>T-Box diagnostics</li>
+<li>T-Box troubleshooting</li>
 
-<li>DSP amplifier troubleshooting</li>
-
-<li>Vehicle failure analysis</li>
+<li>DSP amplifier analysis</li>
 
 <li>OTA quality improvement</li>
 
+<li>Vehicle failure root-cause analysis</li>
+
 </ul>
 
-<h4>NetEase Robotics</h4>
+</div>
+
+<div class="card">
+
+<div class="job-title">
+NetEase Robotics
+</div>
+
+Vehicle Testing Engineer
 
 <ul>
 
 <li>Autonomous Excavator Platform</li>
 
-<li>NVIDIA Orin Deployment</li>
+<li>NVIDIA Orin deployment</li>
 
-<li>AI Construction Machinery</li>
+<li>AI construction machinery testing</li>
+
+<li>Vehicle integration and validation</li>
 
 </ul>
 
 </div>
 
-<div class="card">
+</section>
+
+<section class="section">
 
 <h3>Featured Projects</h3>
 
-<ul>
+<div class="projects">
 
-<li>LEAP 3.5 Smart Cockpit Failure Analysis</li>
+<div class="project">
 
-<li>NetEase Mining Excavator Robot</li>
-
-<li>Vehicle Diagnostic Automation</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h3>Technical Skills</h3>
+<h4>
+🚗 LEAP 3.5 Smart Cockpit
+</h4>
 
 <p>
-
-CAN / CAN-FD |
-Automotive Ethernet |
-Linux |
-QNX |
-Python |
-Excel VBA |
-Wireshark |
-Oscilloscope
-
+Failure analysis and system validation for Smart Cockpit architecture.
 </p>
 
 </div>
 
-<div class="card">
+<div class="project">
+
+<h4>
+🚜 Mining Excavator Robot
+</h4>
+
+<p>
+AI-enabled excavation platform based on NVIDIA technology.
+</p>
+
+</div>
+
+<div class="project">
+
+<h4>
+🤖 AI Productivity Tools
+</h4>
+
+<p>
+Using Copilot and automation tools to improve engineering workflows.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h3>Technical Skills</h3>
+
+<div class="skills">
+
+<span class="skill">CAN</span>
+<span class="skill">CAN-FD</span>
+<span class="skill">Automotive Ethernet</span>
+<span class="skill">ADAS</span>
+<span class="skill">Linux</span>
+<span class="skill">QNX</span>
+<span class="skill">Python</span>
+<span class="skill">Excel VBA</span>
+<span class="skill">Wireshark</span>
+<span class="skill">Oscilloscope</span>
+
+</div>
+
+</section>
+
+</div>
+
+<footer class="footer">
 
 <h3>Contact</h3>
 
 <p>
 
 Email:
+<a href="mailto:liuwenjie@leapmotor.com">
 liuwenjie@leapmotor.com
+</a>
 
 </p>
 
@@ -240,17 +368,12 @@ liuwenjie@leapmotor.com
 
 GitHub:
 <a href="https://github.com/Maxwellwenjie">
-
 github.com/Maxwellwenjie
-
 </a>
 
 </p>
 
-</div>
-
-</div>
+</footer>
 
 </body>
-
 </html>
