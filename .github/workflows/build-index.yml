@@ -1,0 +1,43 @@
+name: Build post indexes
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**.md'
+      - 'scripts/build-index.py'
+      - '.github/workflows/build-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate posts.json for every category
+        run: python scripts/build-index.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- '*posts.json'; then
+            echo "posts.json already up to date — nothing to commit."
+            exit 0
+          fi
+
+          git add '*/posts.json'
+          git commit -m "chore: rebuild posts indexes [skip ci]"
+          git push
