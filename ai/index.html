@@ -36,10 +36,9 @@
 
 <!--
   The list below is generated from posts.json — do not edit it by hand.
-  To publish a new article:
-    1. Add a .md file in this folder
-    2. Add one entry to posts.json
-  This HTML file never needs to change.
+  To publish a new article, just add a .md file in this folder. A
+  GitHub Action will scan it, read its front matter and rebuild
+  posts.json automatically. See HOW-TO-WRITE.md for details.
 -->
 
 <div id="post-list">
@@ -50,9 +49,12 @@
 <h4 style="margin-top:0;">✍ Add a new article</h4>
 <ol style="padding-left:22px;color:#4b5563;">
 <li>Copy <code>_template.md</code>, rename it, and write your content in Markdown.</li>
-<li>Open <code>posts.json</code> and add one entry with title, date, summary, tags and file name.</li>
-<li>Commit and push. GitHub Pages updates within a minute.</li>
+<li>Commit and push the new .md file. A GitHub Action will regenerate <code>posts.json</code> within a minute.</li>
+<li>Refresh the page — your article appears automatically.</li>
 </ol>
+<p style="color:#64748b;font-size:14px;margin-bottom:0;">
+See <a href="/HOW-TO-WRITE.md">HOW-TO-WRITE.md</a> for the full writing guide.
+</p>
 </div>
 
 </div>

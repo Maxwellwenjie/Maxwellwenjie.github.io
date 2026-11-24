@@ -1,7 +1,7 @@
 ---
-title: Clone CAN Message
+title: 克隆 CAN 报文显示
 date: 2026-11-24
-summary: 介绍如何使用ZCAN PRO工具和CAN卡克隆CAN总线的报文显示.
+summary: 介绍如何使用 ZCAN PRO 工具和 CAN 卡克隆 CAN 总线的报文显示，包含完整操作步骤与 DataID 配置说明。
 tags: CAN, Clone
 ---
 

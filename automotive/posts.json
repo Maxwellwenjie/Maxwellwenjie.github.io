@@ -1,5 +1,26 @@
 [
   {
+    "file": "座舱上下电问题排查--VIU解防.md",
+    "title": "座舱上下电问题排查：VIU 解防",
+    "date": "2026-11-24",
+    "summary": "座舱无法开机与无法休眠的完整排查路径，重点说明 VIU 解防状态导致休眠失败的原因及对应的闭锁指令。",
+    "tags": [
+      "座舱",
+      "Diagnostics",
+      "VIU"
+    ]
+  },
+  {
+    "file": "克隆CAN报文.md",
+    "title": "克隆 CAN 报文显示",
+    "date": "2026-11-24",
+    "summary": "介绍如何使用 ZCAN PRO 工具和 CAN 卡克隆 CAN 总线的报文显示，包含完整操作步骤与 DataID 配置说明。",
+    "tags": [
+      "CAN",
+      "Clone"
+    ]
+  },
+  {
     "file": "smart-cockpit-failure-analysis.md",
     "title": "Smart Cockpit Failure Analysis",
     "date": "2026-11-24",
@@ -7,6 +28,28 @@
     "tags": [
       "Smart Cockpit",
       "Diagnostics"
+    ]
+  },
+  {
+    "file": "CANFD解析.md",
+    "title": "CAN-FD 报文格式解析",
+    "date": "2026-11-24",
+    "summary": "从传统 CAN 的带宽瓶颈讲起，系统解析 CAN-FD 的帧格式、位速率切换机制与 ISO 11898-1 标准要点。",
+    "tags": [
+      "CAN-FD",
+      "Protocol",
+      "总线"
+    ]
+  },
+  {
+    "file": "8155休眠唤醒.md",
+    "title": "8155 休眠唤醒",
+    "date": "2026-11-24",
+    "summary": "8155 平台的休眠唤醒调试流程：电路连接、CAN FD 驱动与 ZCANPRO 配置，含 DataID 与 CheckSum 填写规则。",
+    "tags": [
+      "8155",
+      "Sleep/Wake",
+      "CAN-FD"
     ]
   },
   {
@@ -27,16 +70,6 @@
     "tags": [
       "CAN",
       "CAN-FD"
-    ]
-  },
-  {
-    "file": "克隆CAN报文.md",
-    "title": "Clone CAN Message",
-    "date": "2026-11-24",
-    "summary": "介绍如何使用 ZCAN PRO 工具和 CAN 卡克隆 CAN 总线的报文显示。",
-    "tags": [
-      "CAN",
-      "Clone"
     ]
   }
 ]
