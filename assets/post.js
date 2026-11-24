@@ -99,7 +99,7 @@
       }
 
       marked.setOptions({ gfm: true, breaks: false });
-      $body.innerHTML = marked.parse(body);
+      $body.innerHTML = marked.parse(normaliseObsidian(body));
 
       // Add language class + copy-friendly wrapping to code blocks
       Array.prototype.forEach.call($body.querySelectorAll('pre'), function (pre) {
@@ -138,6 +138,45 @@
   }
 
   /* ---------- helpers ---------- */
+
+  /* Rewrite Obsidian-style embeds into standard Markdown images.
+
+       ![[Pasted image 20260119163126.png]]
+       ![[some/path/diagram.png|Alt text]]
+
+     becomes
+
+       ![Alt text](/images/Pasted%20image%2020260119163126.png)
+
+     Bare filenames are assumed to live in /images/, which is where
+     this site keeps its pictures. Paths that already contain a slash
+     are kept as-is (relative to the site root). Standard Markdown
+     images ![alt](src) are left untouched.
+
+     Also handles the non-image form [[Note]] by leaving it alone, so
+     wiki links in prose do not get mangled. */
+  function normaliseObsidian(md) {
+    return md.replace(/!\[\[([^\]\n]+?)\]\]/g, function (whole, inner) {
+      var parts = inner.split('|');
+      var target = parts[0].trim();
+      var alt = (parts[1] || '').trim();
+
+      // Only treat real image extensions as embeds.
+      if (!/\.(png|jpe?g|gif|webp|svg|avif|bmp)$/i.test(target)) return whole;
+
+      // Bare filename -> /images/ ; existing path -> as-is from site root.
+      var src = target.indexOf('/') === -1 ? '/images/' + target : '/' + target.replace(/^\/+/, '');
+
+      // Encode each path segment so spaces and CJK filenames survive.
+      src = src
+        .split('/')
+        .map(function (seg) { return encodeURIComponent(seg); })
+        .join('/');
+
+      var altText = alt || target.replace(/\.[^.]+$/, '');
+      return '![' + altText.replace(/[[\]]/g, '') + '](' + src + ')';
+    });
+  }
 
   // Minimal YAML-ish front matter parser: key: value, tags as a comma list.
   function splitFrontMatter(text) {
