@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Books &amp; Films — Wenjie Liu</title>
+
+<link rel="stylesheet" href="/assets/style.css">
+
+<style>
+.db-meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.db-meta a{font-size:14px;color:#185FA5;text-decoration:none}
+.db-meta a:hover{text-decoration:underline}
+.db-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:32px 0 40px}
+.db-stat{background:#f8fafc;border-radius:10px;padding:16px 18px}
+.db-stat-label{font-size:13px;color:#64748b}
+.db-stat-value{font-size:26px;font-weight:500;margin-top:4px;letter-spacing:-.02em}
+.db-stat-sub{font-size:13px;font-weight:400;color:#64748b;margin-left:3px}
+.db-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:36px}
+.db-block h3{font-size:15px;font-weight:500;margin-bottom:4px}
+.db-block-note{font-size:13px;color:#64748b;margin-bottom:14px}
+.db-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.db-bar-key{font-size:13px;color:#64748b;width:26px;flex:none}
+.db-bar-track{flex:1;height:8px;background:#eef2f7;border-radius:99px;overflow:hidden}
+.db-bar-fill{height:8px;border-radius:99px}
+.db-fill-5{background:#185FA5}
+.db-fill-4{background:#378ADD}
+.db-fill-3{background:#85B7EB}
+.db-fill-2{background:#B5D4F4}
+.db-fill-1{background:#DCE9F8}
+.db-bar-num{font-size:13px;color:#64748b;width:30px;text-align:right;flex:none}
+.db-years{display:flex;align-items:flex-end;gap:8px;height:150px;margin-top:6px}
+.db-year-col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;min-width:0}
+.db-year-bar-wrap{flex:1;width:100%;display:flex;align-items:flex-end}
+.db-year-bar{width:100%;background:#B5D4F4;border-radius:4px 4px 0 0}
+.db-year-num{font-size:11px;color:#64748b;margin-top:5px;height:14px}
+.db-year-label{font-size:11px;color:#94a3b8}
+.db-top{list-style:none;counter-reset:db;padding:0;margin:0}
+.db-top li{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:14px}
+.db-top li:last-child{border-bottom:0}
+.db-top li::before{counter-increment:db;content:counter(db);font-size:12px;color:#94a3b8;width:14px;flex:none}
+.db-top-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.db-top-meta{font-size:12px;color:#94a3b8;flex:none}
+.db-top-stars{font-size:12px;color:#378ADD;letter-spacing:1px;flex:none}
+.db-empty{padding:40px 0;color:#64748b;font-size:14px;text-align:center}
+.db-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:40px;padding-top:16px;border-top:1px solid #e5e7eb;font-size:13px;color:#94a3b8}
+@media (max-width:560px){.db-top-meta{display:none}.db-stat-value{font-size:22px}}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="nav-inner">
+<a class="nav-brand" href="/">Wenjie <span>Liu</span></a>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/#resume">Resume</a>
+<a href="/automotive/">Automotive</a>
+<a href="/ai/">AI</a>
+<a href="/travel/">Travel</a>
+<a href="/photography/">Photography</a>
+<a href="/notes/">Notes</a>
+<a href="/douban/" class="active">Books &amp; Films</a>
+</div>
+</div>
+</nav>
+
+<header class="page-header">
+<div class="db-meta">
+<div>
+<h1>Books &amp; Films</h1>
+<p>看过和读过的东西，以及我打过的分。</p>
+</div>
+<a id="db-link" href="#" target="_blank" rel="noopener" style="display:none">豆瓣主页 ↗</a>
+</div>
+</header>
+
+<div class="container">
+
+<div id="db-stats" class="db-stats">
+<div class="db-empty">Loading…</div>
+</div>
+
+<div id="db-ratings" class="db-grid"></div>
+
+<div id="db-years"></div>
+
+<div id="db-top" class="db-grid"></div>
+
+<div class="db-foot">
+<span>数据来自豆瓣本地导出，构建时生成，非实时</span>
+<span id="db-synced">最近同步 —</span>
+</div>
+
+</div>
+
+<footer class="footer">
+<p><a href="/">← Back to Home</a></p>
+</footer>
+
+<script src="/assets/douban.js"></script>
+</body>
+</html>
