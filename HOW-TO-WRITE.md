@@ -133,3 +133,30 @@ scripts/build-index.py   ← 生成 posts.json 的脚本
 **改了 md 但页面没更新？**
 - jsDelivr 有缓存，大约 12 小时
 - 强制刷新（Ctrl+Shift+R），或加 `?v=2` 测试
+
+---
+
+## 更新豆瓣书影音数据
+
+`/douban/` 页面的数据是本地导出的快照，不会自动跟随豆瓣更新。有新标记时：
+
+**第一步：电影页跑一次**
+打开 `https://movie.douban.com/people/你的ID/collect`，F12 → Console，粘贴 `scripts/douban-console.js`，回车。
+会下载 `douban-movie-*.json` 和 `douban-tv-*.json` 两个文件。
+
+**第二步：书籍页跑一次**
+打开 `https://book.douban.com/people/你的ID/collect`，同样粘贴运行，下载 `douban-book-*.json`。
+
+> 控制台如果拦截粘贴，改用 Sources → Snippets → New snippet，粘进去按 Ctrl+Enter。
+
+**第三步：重建并推送**
+
+```bash
+python scripts/update-douban.py --push
+```
+
+脚本会自动从下载目录里挑最新的三个文件、重建 `data/douban.json`、提交并推送。不加 `--push` 就只重建不提交，方便先看数字对不对。
+
+**注意**：控制台脚本每次都会重新抓全量（不是增量），所以三个文件必须都是新的。只跑书籍页会导致影视数据丢失 —— 脚本检测到缺文件会直接报错退出，不会写出残缺数据。
+
+**影视没有年份**是正常现象：豆瓣电影列表页不提供上映年份，只有书籍页有「作者/出版社/年份」。
