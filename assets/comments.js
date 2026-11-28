@@ -18,10 +18,9 @@
 
    Setup (one time):
      1. Repo → Settings → General → Features → tick "Discussions"
-     2. Create a category, suggested name "Comments", type "Announcements"
-        (Announcements means only maintainers can open threads)
-     3. Open https://giscus.app, enter the repo, pick that category,
-        copy the two id values into CONFIG below.
+     2. Install https://github.com/apps/giscus on the repo
+     3. Open https://giscus.app, enter the repo, pick "Announcements",
+        copy data-category-id into CONFIG below.
    =========================================================== */
 
 (function () {
@@ -31,8 +30,10 @@
     repo: 'Maxwellwenjie/Maxwellwenjie.github.io',
     repoId: 'MDEwOlJlcG9zaXRvcnkxOTQ2MTIyMDE=',
 
-    // Fill these two from giscus.app after Discussions is enabled.
-    category: 'Comments',
+    // Announcements keeps thread creation to maintainers: giscus opens
+    // them through the app, random visitors cannot start their own.
+    // categoryId comes from https://giscus.app once Discussions is on.
+    category: 'Announcements',
     categoryId: '',
 
     reactions: '1',
