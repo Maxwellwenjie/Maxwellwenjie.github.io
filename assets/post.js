@@ -118,6 +118,14 @@
           a.setAttribute('rel', 'noopener');
         }
       });
+
+      // Comment thread. The term has to be the .md path rather than the
+      // pathname: every category shares one article.html, so the pathname
+      // is the same for all articles in that category.
+      // Opt out per article with `comments: false` in the front matter.
+      if (data.comments !== 'false' && typeof window.mountComments === 'function') {
+        window.mountComments('/' + relPath);
+      }
     })
     .catch(function (err) {
       fail('Could not load <code>' + mdPath + '</code> (' + err.message + ').');

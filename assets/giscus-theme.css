@@ -1,0 +1,37 @@
+/* ===========================================================
+   giscus-theme.css - comment section theme, matched to the site
+
+   Derived from the official giscus light theme (MIT, primer/primitives).
+   Only colour values were substituted; variable names and structure are
+   unchanged. assets/comments.js points data-theme at this file.
+   =========================================================== */
+
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */main{--color-prettylights-syntax-comment:#9ca3af;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-entity:#8250df;--color-prettylights-syntax-storage-modifier-import:#111827;--color-prettylights-syntax-entity-tag:#116329;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-variable:#953800;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f9fafb;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-carriage-return-text:#f9fafb;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-italic:#111827;--color-prettylights-syntax-markup-bold:#111827;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-ignored-text:#f3f4f6;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-brackethighlighter-angle:#57606a;--color-prettylights-syntax-sublimelinter-gutter-mark:#9ca3af;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-btn-text:#111827;--color-btn-bg:#f9fafb;--color-btn-border:#11182726;--color-btn-shadow:0 1px 0 #1118270a;--color-btn-inset-shadow:inset 0 1px 0 #ffffff40;--color-btn-hover-bg:#f3f4f6;--color-btn-hover-border:#11182726;--color-btn-active-bg:#ebecf0;--color-btn-active-border:#11182726;--color-btn-selected-bg:#eeeff2;--color-btn-primary-text:#fff;--color-btn-primary-bg:#2563eb;--color-btn-primary-border:#11182726;--color-btn-primary-shadow:0 1px 0 #1118271a;--color-btn-primary-inset-shadow:inset 0 1px 0 #ffffff08;--color-btn-primary-hover-bg:#1d4ed8;--color-btn-primary-hover-border:#11182726;--color-btn-primary-selected-bg:#1e40af;--color-btn-primary-selected-shadow:inset 0 1px 0 #002d1133;--color-btn-primary-disabled-text:#fffc;--color-btn-primary-disabled-bg:#93b4f5;--color-btn-primary-disabled-border:#11182726;--color-action-list-item-default-hover-bg:#e5e7eb52;--color-segmented-control-bg:#f3f4f6;--color-segmented-control-button-bg:#fff;--color-segmented-control-button-selected-border:#9ca3af;--color-fg-default:#111827;--color-fg-muted:#6b7280;--color-fg-subtle:#9ca3af;--color-canvas-default:#fff;--color-canvas-overlay:#fff;--color-canvas-inset:#f9fafb;--color-canvas-subtle:#f9fafb;--color-border-default:#e5e7eb;--color-border-muted:#f3f4f6;--color-neutral-muted:#afb8c133;--color-accent-fg:#2563eb;--color-accent-emphasis:#2563eb;--color-accent-muted:#2563eb66;--color-accent-subtle:#eff6ff;--color-success-fg:#1d4ed8;--color-attention-fg:#9a6700;--color-attention-muted:#d4a72c66;--color-attention-subtle:#fff8c5;--color-danger-fg:#d1242f;--color-danger-muted:#ff818266;--color-danger-subtle:#ffebe9;--color-primer-shadow-inset:inset 0 1px 0 #e5e7eb33;--color-scale-gray-1:#f3f4f6;--color-scale-blue-1:#dbeafe;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */--color-social-reaction-bg-hover:var(--color-scale-gray-1);--color-social-reaction-bg-reacted-hover:var(--color-scale-blue-1)}main .pagination-loader-container{background-image:url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg)}main .gsc-loading-image{background-image:url(https://github.githubassets.com/images/mona-loading-default.gif)}
+
+/* ---------- align type and radius with the rest of the site ---------- */
+
+main{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;
+    line-height:1.7;
+}
+
+main .gsc-comment-box,
+main .gsc-comment-box-main,
+main .gsc-comment,
+main .gsc-reply-box{
+    border-radius:10px;
+}
+
+main .gsc-comment-box-tabs{
+    border-radius:10px 10px 0 0;
+}
+
+main .gsc-comment-box-main{
+    border-radius:0 0 10px 10px;
+}

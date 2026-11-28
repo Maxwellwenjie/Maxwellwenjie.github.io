@@ -160,3 +160,38 @@ python scripts/update-douban.py --push
 **注意**：控制台脚本每次都会重新抓全量（不是增量），所以三个文件必须都是新的。只跑书籍页会导致影视数据丢失 —— 脚本检测到缺文件会直接报错退出，不会写出残缺数据。
 
 **影视没有年份**是正常现象：豆瓣电影列表页不提供上映年份，只有书籍页有「作者/出版社/年份」。
+
+---
+
+## 评论区（giscus）
+
+评论由 [giscus](https://giscus.app) 提供，数据存在本仓库的 GitHub Discussions 里 —— 没有第三方服务器，也不会随服务关停而消失。
+
+### 为什么不用默认的 pathname 匹配
+
+所有分类共用同一个 `article.html`，文章靠 `?p=文件名.md` 选择，所以 `location.pathname` 对同分类下每篇文章都一样。如果按 pathname 建话题，一个分类的所有文章会挤进同一个评论区。
+
+因此 `assets/post.js` 传的是 `.md` 的仓库相对路径作为 `specific` term，例如 `/travel/葡萄牙之行.md`。
+
+**代价：改文件名 = 换新话题，旧评论留在原话题里。** 分类文件夹改名同理。所以文章定稿后尽量别再改文件名。
+
+### 关掉某篇文章的评论
+
+在 front matter 里加一行：
+
+```markdown
+---
+title: 某篇不想开评论的文章
+date: 2026-11-26
+comments: false
+---
+```
+
+### 首次配置
+
+1. 仓库 Settings → General → Features → 勾上 **Discussions**
+2. 到 <https://github.com/apps/giscus> 安装到本仓库
+3. 打开 <https://giscus.app>，填仓库名，分类选 **Announcements**（只有维护者能建话题，避免有人随手开串），
+   把生成代码里的 `data-category-id` 填进 `assets/comments.js` 的 `categoryId`
+
+配色主题在 `assets/giscus-theme.css`，由 giscus 官方 light 主题改写而来，只换了色值，想调就改里面的变量。
