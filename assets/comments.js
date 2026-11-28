@@ -34,7 +34,7 @@
     // them through the app, random visitors cannot start their own.
     // categoryId comes from https://giscus.app once Discussions is on.
     category: 'Announcements',
-    categoryId: '',
+    categoryId: 'DIC_kwDOC5mL6c4DMLOR',
 
     reactions: '1',
     inputPosition: 'top',
