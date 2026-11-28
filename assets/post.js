@@ -3,17 +3,21 @@
 
    URL form:  /<category>/article.html?p=<filename>.md
 
-   IMPORTANT — why .md is fetched from a CDN:
-   GitHub Pages does not serve .md files. Requests to *.md return
-   404/503 from the Fastly edge cache, even though the file is
-   committed. So we read the raw file through jsDelivr:
+   Where the .md comes from:
+   The repo carries a .nojekyll file, so GitHub Pages serves every
+   file verbatim — including *.md, as text/markdown. The raw file is
+   therefore read from the current origin first: it is always the
+   copy that was just pushed, and it needs no third party.
+
+   jsDelivr is kept as a fallback only:
 
        https://cdn.jsdelivr.net/gh/<owner>/<repo>@<branch>/<path>
 
-   jsDelivr serves it as text/markdown with CORS open. If the CDN
-   fails (offline, rate limit, cold cache), we fall back to the
-   same path on the current origin — which works when previewing
-   locally with `python -m http.server`.
+   It used to be the primary source, but it caches the branch alias
+   for up to 12 hours, so a freshly pushed article would keep
+   rendering the previous version long after the push. It is still
+   useful when the origin 404s (e.g. a stale deploy) or when the
+   site is served from somewhere that hides .md files.
 
    If you fork this site or rename the repo, update REPO below.
 
@@ -119,10 +123,11 @@
       fail('Could not load <code>' + mdPath + '</code> (' + err.message + ').');
     });
 
-  /* ---------- loading: CDN first, local as fallback ---------- */
+  /* ---------- loading: origin first, CDN as fallback ---------- */
 
   function loadMarkdown(rel) {
-    var sources = [CDN + encodeURI(rel), base + mdPath];
+    // Origin first: with .nojekyll in place this is the freshest copy.
+    var sources = [base + mdPath, CDN + encodeURI(rel)];
 
     // Walk the sources in order, stopping at the first success.
     return sources.reduce(function (chain, url) {
@@ -133,7 +138,7 @@
         });
       });
     }, Promise.reject(new Error('no source'))).catch(function () {
-      throw new Error('HTTP 503 — GitHub Pages does not serve .md files, and the CDN is unreachable');
+      throw new Error('HTTP 503 — neither the site itself nor the CDN returned the .md file');
     });
   }
 
